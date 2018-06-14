@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>mDevCamp Bot</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="css/device-mockups.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/new-age.css" rel="stylesheet">
+  <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+
+</head>
+
+<body id="page-top">
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">Do you know all the speakers from this year's mDevCamp? Come and try!</h1>
+            <h3 id="scoreView"></h3>
+            <h2 id="finalScore" class="mb-5"></h2>
+            <a href="#" id="startButton" class="btn btn-outline btn-xl js-scroll-trigger">Restart!</a>
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto">
+          <div class="device-container">
+            <div class="device-mockup lumia920 portrait white">
+              <div id="bot" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="download bg-primary text-center" id="download">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h2 class="section-heading">About</h2>
+          <p>
+            Demo chatbot for the mDevCamp 2018 conference. Built by
+            <a href="https://deedx.cz">Martin Šimeček</a> in 2018. Powered by
+            <a href="https://azure.microsoft.com">Microsoft Azure</a> &amp;
+            <a href="https://github.com/Microsoft/BotBuilder">Bot Framework</a>.
+          </p>
+          <p>Source code will be published soon...</p>
+
+          <div class="badges">
+            <a class="badge-link" href="https://azure.microsoft.com">
+              <img src="img/MS-Azure-Logo.png" alt="Microsoft Azure">
+            </a>
+            <a class="badge-link" href="#">
+              <img src="img/GitHub-Mark-64px.png" alt="GitHub repo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Martin Simecek 2018. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="privacy.html">Privacy</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+  <script src="./js/bot.js"></script>
+
+</body>
+
+</html>
