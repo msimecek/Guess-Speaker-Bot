@@ -154,9 +154,12 @@
     <Content Include="default.htm" />
     <None Include=".gitignore" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -181,6 +184,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Web.config" />
     <None Include="Web.config.placeholder">
       <SubType>Designer</SubType>
     </None>
@@ -189,12 +193,6 @@
     </None>
     <None Include="Web.config.Release.placeholder">
       <DependentUpon>Web.config.placeholder</DependentUpon>
-    </None>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
