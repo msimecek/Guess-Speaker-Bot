@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using MDevCampBot.Models;
@@ -122,6 +123,12 @@ namespace MDevCampBot.Dialogs
 
         private async Task GoNext(IDialogContext context)
         {
+            var typing = context.MakeMessage();
+            typing.Type = ActivityTypes.Typing;
+            typing.Text = null;
+            await context.PostAsync(typing);
+            Thread.Sleep(1500);
+
             var faceShown = await TryShowRandomFaceAsync(context);
             if (!faceShown)
             {
