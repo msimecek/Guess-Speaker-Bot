@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -25,28 +26,26 @@ namespace MDevCampBot.Models
 
         public List<Person> GetRandomPeople(Person include, int count = 3, IEnumerable<Person> guessedPoeple = null)
         {
-            var res = new List<Person>();
+            var res = new Person[count];
             Random rand = new Random();
             var shuffle = rand.Next(0, count); // na kterou pozici přijde správná odpověď
+            res[shuffle] = include;
             for (int i = 0; i < count; i++)
             {
                 if (i == shuffle)
-                {
-                    res.Add(include);
                     continue;
-                }
 
                 Person p;
                 do
                 {
                     p = this.GetRandomPerson();
-                } while (res.Contains(p) || p == include);
+                } while (res.Contains(p, new PersonComparer()) || p.Name == include.Name);
 
                 if (guessedPoeple == null || !guessedPoeple.Contains(p))
-                    res.Add(p);
+                    res[i] = p;
             }
 
-            return res;
+            return res.ToList();
         }
 
         public static PeopleCollection FromCsv(string csvContent)

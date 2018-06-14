@@ -10,6 +10,9 @@ namespace MDevCampBot
     {
         public bool Equals(Person x, Person y)
         {
+            if (x == null || y == null)
+                return false;
+
             return 
                 (x.Company == y.Company) 
                 && (x.Name == y.Name) 
