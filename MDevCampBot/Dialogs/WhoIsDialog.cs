@@ -49,7 +49,7 @@ namespace MDevCampBot.Dialogs
                     // správná odpověď
                     TelemetryService.SendTelemetry(new TelemetryModel("correct", lastPerson.Name));
 
-                    await context.PostAsync("Correct!");
+                    await context.PostAsync("✔️ Correct!");
 
                     // zvednout skóre
                     if (context.ConversationData.ContainsKey(Constants.SECOND_CHANCE))
@@ -78,7 +78,7 @@ namespace MDevCampBot.Dialogs
 
                     if (context.ConversationData.ContainsKey(Constants.SECOND_CHANCE))
                     {
-                        await context.PostAsync($"That is not correct. Let's try another speaker.");
+                        await context.PostAsync($"❌ That is not correct. Let's try another speaker.");
                         context.ConversationData.RemoveValue(Constants.SECOND_CHANCE);
 
                         await GoNext(context);

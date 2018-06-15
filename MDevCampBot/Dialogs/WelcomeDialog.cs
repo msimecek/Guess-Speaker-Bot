@@ -41,7 +41,7 @@ namespace MDevCampBot.Dialogs
             var playerName = context.ConversationData.GetValue<string>(Constants.PLAYER_NAME_KEY);
 
             await LeaderboardService.SaveScoreAsync(playerName, score);
-            await context.PostAsync($"You are done! Your final score is: **{score}**.");
+            await context.PostAsync($"💯 You are done! Your final score is: **{score}**.");
             await Utils.SendEventAsync(context, Constants.END_GAME_EVENT, score);
 
             // cleanup
