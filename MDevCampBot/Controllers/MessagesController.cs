@@ -27,7 +27,7 @@ namespace MDevCampBot
                 if (activity.AsEventActivity().Name == "startGame")
                 {
                     var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-                    var reply = activity.CreateReply("Welcome! Let's find out how well do you know our speakers. First - what's your **coin address**?");
+                    var reply = activity.CreateReply("Welcome! Let's find out how well do you know our speakers. First - what's your **attendee code** (you can find it on your badge, something like: fd64)?");
                     await connector.Conversations.ReplyToActivityAsync(reply);
                 }
             }
