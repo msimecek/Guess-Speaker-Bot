@@ -29,7 +29,7 @@ namespace MDevCampBot
                                 .AsSelf()
                                 .SingleInstance();
 
-                            builder.Register(c => new CachingBotDataStore(store, CachingBotDataStoreConsistencyPolicy.ETagBasedConsistency))
+                            builder.Register(c => new CachingBotDataStore(store, CachingBotDataStoreConsistencyPolicy.LastWriteWins))
                                 .As<IBotDataStore<BotData>>()
                                 .AsSelf()
                                 .InstancePerLifetimeScope();
